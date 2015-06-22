@@ -16,7 +16,7 @@ import static main.java.setup.SeleniumDriver.getDriver;
 public abstract class BackendlessPage<T>
 {
  // private static final String BASE_URL = "http://localhost";
-  private static final String BASE_URL = "http://develop.test.backendless.com";
+  private static final String BASE_URL = "http://develop.backendless.com";
   private static final int LOAD_TIMEOUT = 50;
   private static final int REFRESH_RATE = 2;
 
