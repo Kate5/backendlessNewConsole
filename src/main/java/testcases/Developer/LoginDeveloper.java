@@ -1,5 +1,6 @@
 package main.java.testcases.Developer;
 
+import junit.framework.Assert;
 import main.java.pages.Developer.BackendlessLoginPage;
 import main.java.pages.Developer.BackendlessMainPage;
 import org.junit.Ignore;
@@ -25,7 +26,7 @@ public class LoginDeveloper
 
   public static final String FIRTS = "test";
   public static final String LAST = "test";
-  public static final String EMAIL = "";
+  public static final String EMAIL = "foo@foo.com";
   public static final String PASSWORD = "";
   public static final String INCORRECT_PASSWORD = "111";
   public static final String LOGIN = "";
@@ -46,6 +47,7 @@ public class LoginDeveloper
   {
     BackendlessLoginPage loginPage = new BackendlessMainPage().open().goToLoginPage();
     loginPage.loginDeveloper( EMAIL, INCORRECT_PASSWORD );
+    assertTrue("Incorrect toaster message for login in developer with incorrect password", loginPage.checkToaster( "Invalid developer's login or password" ));
     getDriver().manage().timeouts().implicitlyWait( 50, TimeUnit.SECONDS );
   }
 
